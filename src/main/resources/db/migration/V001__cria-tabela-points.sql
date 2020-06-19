@@ -7,5 +7,7 @@ CREATE TABLE points (
     longitude DOUBLE NOT NULL,
     city VARCHAR(255) NOT NULL,
     uf VARCHAR(2) NOT NULL,
+    items_id BIGINT NOT NULL,
+    
     PRIMARY KEY (id)
 );
