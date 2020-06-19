@@ -1,0 +1,15 @@
+# Created by https://www.toptal.com/developers/gitignore/api/java-web,code-java
+# Edit at https://www.toptal.com/developers/gitignore?templates=java-web,code-java
+
+### Code-Java ###
+# Language Support for Java(TM) by Red Hat extension for Visual Studio Code - https://marketplace.visualstudio.com/items?itemName=redhat.java
+
+.project
+.classpath
+factoryConfiguration.json
+
+### Java-Web ###
+## ignoring target file
+target/
+
+# End of https://www.toptal.com/developers/gitignore/api/java-web,code-java
