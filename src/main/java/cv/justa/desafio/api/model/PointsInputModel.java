@@ -1,17 +1,23 @@
 package cv.justa.desafio.api.model;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class PointsInputModel {
 	
 	@NotBlank
+	@Size(max = 60)
 	private String name;
 	
 	@NotBlank
+	@Email
+	@Size(max = 255)
 	private String email;
 	
 	@NotBlank
+	@Size(max = 20)
 	private String whatsapp;
 	
 	@NotNull
@@ -21,9 +27,11 @@ public class PointsInputModel {
 	private Double longitude;
 	
 	@NotBlank
+	@Size(max = 255)
 	private String city;
 	
 	@NotBlank
+	@Size(max = 2)
 	private String uf;
 
 	public String getName() {
