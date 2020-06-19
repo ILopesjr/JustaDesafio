@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Items {
@@ -12,6 +13,9 @@ public class Items {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@ManyToOne
+	private Points points;
+	
 	private String title;
 	
 	public Long getId() {
@@ -19,6 +23,12 @@ public class Items {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public Points getPoints() {
+		return points;
+	}
+	public void setPoints(Points points) {
+		this.points = points;
 	}
 	public String getTitle() {
 		return title;

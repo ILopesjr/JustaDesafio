@@ -1,0 +1,11 @@
+CREATE TABLE points (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(60) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    whatsapp VARCHAR(20) NOT NULL,
+    latitude DECIMAL NOT NULL,
+    longitude DECIMAL NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    uf VARCHAR(2) NOT NULL,
+    PRIMARY KEY (id)
+);
