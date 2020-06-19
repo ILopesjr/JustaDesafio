@@ -18,7 +18,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import cv.justa.desafio.api.exceptionhandler.GetErrors.Fields;
 import cv.justa.desafio.domain.exception.BusinessException;
-import cv.justa.desafio.domain.exception.EntityNotFoundException;
 
 @ControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler{
@@ -26,32 +25,13 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler{
 	@Autowired
 	private MessageSource messageSource;
 	
-	@ExceptionHandler(EntityNotFoundException.class)
-	public ResponseEntity<Object> handleEntityNotFoundException(BusinessException ex, WebRequest request){
-		HttpStatus status = HttpStatus.NOT_FOUND;
-		
-		GetErrors getErrors = new GetErrors();
-		
-		getErrors.setName(ex.getMessage());
-		getErrors.setEmail(ex.getMessage());
-		getErrors.setWhatsapp(ex.getMessage());
-		getErrors.setCity(ex.getMessage());
-		getErrors.setUf(ex.getMessage());
-		
-		return handleExceptionInternal(ex, getErrors, new HttpHeaders(), status, request);
-	}
-	
 	@ExceptionHandler(BusinessException.class)
 	public ResponseEntity<Object> handleBusinessException(BusinessException ex, WebRequest request){
 		HttpStatus status = HttpStatus.BAD_REQUEST;
 		
 		GetErrors getErrors = new GetErrors();
 		
-		getErrors.setName(ex.getMessage());
 		getErrors.setEmail(ex.getMessage());
-		getErrors.setWhatsapp(ex.getMessage());
-		getErrors.setCity(ex.getMessage());
-		getErrors.setUf(ex.getMessage());
 		
 		return handleExceptionInternal(ex, getErrors, new HttpHeaders(), status, request);
 	}

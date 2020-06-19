@@ -8,4 +8,6 @@ import cv.justa.desafio.domain.model.Points;
 @Repository
 public interface PointsRepository extends JpaRepository<Points, Long>{
 
+	Points findByEmail(String email);
+	
 }
